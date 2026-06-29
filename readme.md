@@ -73,7 +73,7 @@ Option A : Double-cliquez sur index.html pour l'ouvrir directement dans votre na
 
 Option B (Recommandée) : Utilisez l'extension Live Server sur VS Code pour simuler un environnement de production.
 ```
-### Structure du Projet
+### 🗂️ Structure du Projet
 ```
 ├── index.html        # Structure HTML5 du site
 ├── style.css         # Styles CSS3 (incluant le responsive fluide)
@@ -81,3 +81,6 @@ Option B (Recommandée) : Utilisez l'extension Live Server sur VS Code pour simu
 ├── README.md         # Documentation du projet
 └── images/           # Actifs graphiques et logos
 ```
+
+👤 Auteur Kevin Delcroix
+2026
