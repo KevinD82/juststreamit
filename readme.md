@@ -30,33 +30,54 @@ Pour faire fonctionner ce projet sur votre machine, vous devez avoir installé :
 
 L'application frontend dépend de cette API pour récupérer les données des films. Suivez ces étapes pour la lancer :
 
-1. Ouvrez un terminal et clonez le dépôt de l'API :
-    ```bash
-   git clone [https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git)
+Ouvrez un terminal et clonez le dépôt de l'API :
+```
+git clone [https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git)
 
-    ```bash
-   cd ocmovies-api-fr
-    ```bash
+cd ocmovies-api-fr
+```
 ### 2. Créez un environnement virtuel
-    ```bash
+```
 Windows : python -m venv env
-    ```bash
+
 Mac/Linux : python3 -m venv env
-    ```bash
+```
 ### 3. Activez un environnement virtuel
-    ```bash
+```
 Windows : env\Scripts\activate
-    ```bash
+
 Mac/Linux : source env/bin/activate
-    ```bash
+```
 ### 4. Installez les dépendances requises
-    ```bash
+```
 pip install -r requirements.txt
-    ```bash
+```
 ### 5. Initialisez et alimentez la base de données (uniquement au premier lancement)
-    ```bash
+```
 python manage.py create_db
-    ```bash
+```
 ### 6. Démarrez le serveur local
-    ```bash
-    python manage.py runserver
+```
+python manage.py runserver
+```
+
+### 2. Lancer l'Interface Utilisateur (Frontend)
+
+Une fois que l'API tourne sur votre terminal (étape précédente active) :
+```
+Ouvrez le dossier de ce projet (JustStreamIt).
+```
+Lancez le fichier index.html :
+```
+Option A : Double-cliquez sur index.html pour l'ouvrir directement dans votre navigateur.
+
+Option B (Recommandée) : Utilisez l'extension Live Server sur VS Code pour simuler un environnement de production.
+```
+### Structure du Projet
+```
+├── index.html        # Structure HTML5 du site
+├── style.css         # Styles CSS3 (incluant le responsive fluide)
+├── script.js         # Logique JavaScript (requêtes Fetch asynchrones, manipulation du DOM)
+├── README.md         # Documentation du projet
+└── images/           # Actifs graphiques et logos
+```
