@@ -169,6 +169,17 @@ async function openModal(movieId) {
     const response = await fetch(`http://127.0.0.1:8000/api/v1/titles/${movieId}`);
     const movie = await response.json();
 
+    const modalImg = document.getElementById("modal-img");
+        
+        // On définit la source de l'image. 
+        // On ajoute un timestamp (new Date().getTime()) pour éviter que le navigateur n'affiche l'image précédente en cache.
+        modalImg.src = movie.image_url ? `${movie.image_url}?t=${new Date().getTime()}` : "https://picsum.photos/252/247";
+        
+        // Si l'image renvoyée par l'API est cassée, on charge une image de secours
+        modalImg.onerror = () => { 
+            modalImg.src = "https://picsum.photos/252/247"; 
+        };
+
 // Image et Titre (Ligne 1)
     document.getElementById("modal-img").src = movie.image_url || "https://picsum.photos/252/247";
     document.getElementById("modal-title").textContent = movie.title;
