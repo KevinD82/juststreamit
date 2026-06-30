@@ -30,7 +30,7 @@ function renderGrid(container, movies) {
         div.classList.add("movie-card");
 
         div.innerHTML = `
-            <img src="${movie.image_url}" alt="${movie.title}" onerror="this.src='https://picsum.photos/252/247'">
+            <img src="${movie.image_url}" alt="${movie.title}" onerror="this.src='images/Cinema.png'">
             <div class="movie-overlay">
                 <span class="movie-title">${movie.title}</span>
                 <button class="details-btn" data-id="${movie.id}">Détails</button>
@@ -59,7 +59,7 @@ async function displayBestMovie() {
         const desc = document.getElementById("best-movie-desc");
 
         img.src = bestMovie.image_url;
-        img.onerror = () => img.src = "https://picsum.photos/300/400";
+        img.onerror = () => img.src = "images/Cinema.png";
         title.textContent = bestMovie.title;
 
         const detailResponse = await fetch(`http://127.0.0.1:8000/api/v1/titles/${bestMovie.id}`);
@@ -173,15 +173,15 @@ async function openModal(movieId) {
         
         // On définit la source de l'image. 
         // On ajoute un timestamp (new Date().getTime()) pour éviter que le navigateur n'affiche l'image précédente en cache.
-        modalImg.src = movie.image_url ? `${movie.image_url}?t=${new Date().getTime()}` : "https://picsum.photos/252/247";
+        modalImg.src = movie.image_url ? `${movie.image_url}?t=${new Date().getTime()}` : "images/Cinema.png";
         
         // Si l'image renvoyée par l'API est cassée, on charge une image de secours
         modalImg.onerror = () => { 
-            modalImg.src = "https://picsum.photos/252/247"; 
+            modalImg.src = "images/Cinema.png";
         };
 
 // Image et Titre (Ligne 1)
-    document.getElementById("modal-img").src = movie.image_url || "https://picsum.photos/252/247";
+    document.getElementById("modal-img").src = movie.image_url || "images/Cinema.png";
     document.getElementById("modal-title").textContent = movie.title;
     
     // Ligne 2 : Année - Genres (ex: 1998 - Comedy, Crime, Sport)
